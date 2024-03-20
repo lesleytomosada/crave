@@ -1,4 +1,4 @@
-interface ChartProps {
+interface ResultProps {
     list: Restaurant[];
 }
 
@@ -13,10 +13,9 @@ export interface Restaurant {
     }
 
 
-const Chart: React.FC<ChartProps> = ({ list }) => {
+const Result: React.FC<ResultProps> = ({ list }) => {
     return (
         <div>
-        <h2>Chart</h2>
         <table>
             <thead>
                 <tr>
@@ -45,4 +44,4 @@ const Chart: React.FC<ChartProps> = ({ list }) => {
         </div>
     );
 }
-export default Chart;
+export default Result;

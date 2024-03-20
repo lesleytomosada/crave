@@ -10,7 +10,7 @@ app.use(cors());
 
 app.get('/search', async (req, res) => {
     const { term, latitude, longitude } = req.query;
-    const url = `https://api.yelp.com/v3/businesses/search?term=${term}&latitude=${latitude}&longitude=${longitude}&sort_by=distance&limit=5`;
+    const url = `https://api.yelp.com/v3/businesses/search?term=${term}&latitude=${latitude}&longitude=${longitude}&sort_by=distance&open_now=true&limit=5`;
 
     const response = await fetch(url, {
         headers: {
