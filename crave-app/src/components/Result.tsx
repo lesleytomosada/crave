@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface ResultProps {
     list: Restaurant[];
 }
@@ -14,34 +16,19 @@ export interface Restaurant {
 
 
 const Result: React.FC<ResultProps> = ({ list }) => {
+    const [currentIndex, setCurrentIndex] = useState<number>(0);
+
     return (
-        <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Distance (meters)</th>
-                    <th>Yelp Link</th>
+        <div className="result">
+        <p className="resultTitle">Result</p>       
+                <tr key={list[currentIndex].id}>
+                    <td>{list[currentIndex].name}</td>
+                    <td>{list[currentIndex].location.address1}</td>
+                    <td>{list[currentIndex].distance.toFixed(1)}m away</td>
+                    <td><a href={list[currentIndex].url}>{list[currentIndex].name}</a></td>
                 </tr>
-            </thead>
-        <tbody>
-            {list.map((restaurant) => {
-                return (
-                    <tr key={restaurant.id}>
-                        <td>{restaurant.name}</td>
-                        <td>{restaurant.location.address1}</td>
-                        <td>{restaurant.distance.toFixed(1)}</td>
-                        <td><a href={restaurant.url}>{restaurant.name}</a></td>
-                    </tr>
-                )
-            })}
-        </tbody>
+                </div>
+ )
+    }
 
-
-        </table>
-    
-        </div>
-    );
-}
 export default Result;

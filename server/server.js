@@ -1,6 +1,4 @@
 require('dotenv').config();
-console.log('test');
-console.log(process.env);
 const express = require('express');
 const fetch = require('node-fetch');
 const cors = require('cors');

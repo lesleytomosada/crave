@@ -24,23 +24,26 @@ const Form: React.FC = () => {
     const fetchRestaurants = async () => {
         const url = `http://localhost:3001/search?term=${type}&latitude=${lat}&longitude=${long}`;
         const response = await fetch(url);
+        console.log(response);
         const data = await response.json();
+        console.log(data);
         setList(data.businesses);  
         showChart(true);
     }
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => { 
         e.preventDefault();
         await fetchRestaurants();
-        console.log(type, lat, long);
-        console.log(list)
     }
-    
+
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" onChange={e => setType(e.target.value)} />
             <button disabled={loading} type="submit">Submit</button>
+
+            <div className='resultContainer'>
             {chart ? <Result list={list} /> : null}
+            </div>
         </form>
     )
 }
