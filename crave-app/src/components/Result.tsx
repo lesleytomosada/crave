@@ -21,7 +21,7 @@ const Result: React.FC<ResultProps> = ({ list }) => {
                 <tr>
                     <th>Name</th>
                     <th>Address</th>
-                    <th>Distance</th>
+                    <th>Distance (meters)</th>
                     <th>Yelp Link</th>
                 </tr>
             </thead>
@@ -31,7 +31,7 @@ const Result: React.FC<ResultProps> = ({ list }) => {
                     <tr key={restaurant.id}>
                         <td>{restaurant.name}</td>
                         <td>{restaurant.location.address1}</td>
-                        <td>{restaurant.distance}</td>
+                        <td>{restaurant.distance.toFixed(1)}</td>
                         <td><a href={restaurant.url}>{restaurant.name}</a></td>
                     </tr>
                 )
