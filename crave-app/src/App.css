@@ -16,6 +16,7 @@ body {
 }
 
 .result {
+  width: 20%;
   margin: 1rem auto;
   background-color: rgba(249,249,247,1);
   padding: 0 1rem 1rem 1rem;
@@ -73,4 +74,9 @@ table, th, td {
 .resultTitle {
   margin: 0;
   font-size: x-large;
+}
+
+.formTitle {
+  margin: 0;
+  font-size: large;
 }

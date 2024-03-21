@@ -26,14 +26,12 @@ const Result: React.FC<ResultProps> = ({ list }) => {
   return (
     <div className="result">
       <p className="resultTitle">Result</p>
-      <tr key={list[currentIndex].id}>
         <p>{list[currentIndex].name}</p>
         <p>{list[currentIndex].location.address1}</p>
         <p>{list[currentIndex].distance.toFixed(1)}m away</p>
         <p>
           <a href={list[currentIndex].url}>{list[currentIndex].name}</a>
         </p>
-      </tr>
       <button onClick={handlePrev} disabled={currentIndex === 0}>Previous</button>
             <button onClick={handleNext} disabled={currentIndex === list.length - 1}>Next</button>
     </div>
