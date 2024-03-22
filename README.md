@@ -1,6 +1,7 @@
 # Crave
  
-## Video Demo:
+## Video Demo: 
+https://youtu.be/zySRs-41KIs
  
 ## Description:
 Crave is a web application that helps you satisfy your cravings easily by helping you find the nearest place to get your fix.
